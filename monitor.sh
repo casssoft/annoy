@@ -23,7 +23,7 @@ while true; do
     frame=$(echo $frame + 1 | bc)
     if [ "$SHOULDTALK" -eq "0" ]; then
         #talk every minute and a half
-        if [ "$(echo $frame % 50 | bc)" -eq "0" ]; then
+        if [ "$(echo $frame % 900 | bc)" -eq "0" ]; then
             echo "just gonna say HELLO"
             msg=${messages[$RANDOM % ${#messages[@]}]}
             osascript -e "display notification \"$msg\" with title \"!!\""
